@@ -30,21 +30,20 @@ build(wallToBuild, (error, wallBuilt) =>{
     if (error) {
         console.error('Could not built the wall')
         return
-    }
-        planish(wallBuilt, (error, wallPlanished) => {
-        if (error){
+        }
+            planish(wallBuilt, (error, wallPlanished) => {
+            if (error){
             console.error('Could not planish the wall')
             return
-        }
+            }
             paint(wallPlanished, (error, wallPainted) => {
-        if (error){
+                if (error){
             console.error('Could not paint the wall')
             return
-        }
-
-    console.log('Done!')
-    console.log('Wall: ', wallPainted)
-    console.log('wallToBuild: ', wallToBuild)
+            }
+            console.log('Done!')
+            console.log('Wall: ', wallPainted)
+            console.log('wallToBuild: ', wallToBuild)
         })
     })
 })
